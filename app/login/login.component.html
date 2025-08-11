@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <label>Phone</label>
+<input type="text" [(ngModel)]="phone" name="phone" required />
+
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit">Login</button>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </form>
+
+  <!-- 👇 Register link added here -->
+  <div class="mt-2 text-center">
+    Don't have an account? <a routerLink="/register">Register</a>
+  </div>
+</div>

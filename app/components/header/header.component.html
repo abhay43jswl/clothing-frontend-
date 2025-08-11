@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+  <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+    <img src="https://media.istockphoto.com/id/1421629352/vector/tiger-head-tattoo-mascot-creative-design.jpg?s=612x612&w=0&k=20&c=3C4Cs4-WJ817C8SjFauL4UqYlWSAwaNdb4EwZLgTAFk=" alt="Logo"
+         width="40" height="40" class="me-2">
+    <span>AARCLE WEARABLES</span>
+  </a>
+
+  <div class="ms-auto d-flex align-items-center gap-4">
+    <a routerLink="/cart" class="text-white text-decoration-none">
+      🛒 <span class="cart-count">{{ cartCount }}</span>
+    </a>
+
+    <a *ngIf="!auth.isAuthenticated()" routerLink="/login" class="text-white text-decoration-none">
+      Login
+    </a>
+
+    <a *ngIf="auth.isAuthenticated()" (click)="logout()" class="text-white text-decoration-none" style="cursor: pointer;">
+      Logout
+    </a>
+  </div>
+</nav>
